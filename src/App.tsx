@@ -13,8 +13,7 @@ import { ColorModeSwitcher } from "./ColorModeSwitcher"
 import { Logo } from "./Logo"
 
 export const App = () => (
-  <ChakraProvider theme={theme}>
-    <Box textAlign="center" fontSize="xl">
+    <Box bgGradient="radial(brand.700, brand.900)" textAlign="end" fontSize="xl">
       <Grid minH="100vh" p={3}>
         <ColorModeSwitcher justifySelf="flex-end" />
         <VStack spacing={8}>
@@ -34,5 +33,4 @@ export const App = () => (
         </VStack>
       </Grid>
     </Box>
-  </ChakraProvider>
 )
