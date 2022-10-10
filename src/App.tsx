@@ -7,9 +7,13 @@ import {
   Text,
   Box,
   useBreakpointValue,
+  Textarea,
+  Input,
+  useColorModeValue
 } from '@chakra-ui/react';
 
 export const App = () => {
+  const formBackground = useColorModeValue("gray.100", "gray.700");
   return (
   <Box bgGradient="radial(brand.800, brand.700)">
     <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
@@ -18,22 +22,12 @@ export const App = () => {
           <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
             <Text
               as={'span'}
-              position={'relative'}
-              _after={{
-                content: "''",
-                width: 'full',
-                height: useBreakpointValue({ base: '20%', md: '30%' }),
-                position: 'absolute',
-                bottom: 1,
-                left: 0,
-                bg: 'blue.400',
-                zIndex: -1,
-              }}>
+              position={'relative'}>
               Freelance
             </Text>
             <br />{' '}
-            <Text color={'blue.400'} as={'span'}>
-              Design Projects
+            <Text color={'white'} as={'span'}>
+              NFT Artwork
             </Text>{' '}
           </Heading>
           <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
@@ -54,14 +48,34 @@ export const App = () => {
           </Stack>
         </Stack>
       </Flex>
-      <Flex flex={1}>
-        <Image
-          alt={'Login Image'}
-          objectFit={"scale-down"}
-          src={
-            'https://images.unsplash.com/photo-1527689368864-3a821dbccc34?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
-          }
-        />
+      <Flex height="100vh" alignItems="center" justifyContent="center" pr={10}>
+        <Flex
+          direction={"column"}
+          background={formBackground}
+          p={12}
+          rounded={20}
+    
+        >
+      <Heading mb={6}>Request</Heading>
+      <Input
+        placeholder="ed.marcavage@gmail.com"
+        variant="filled"
+        mb={3}
+        type="email"
+      ></Input>
+      <Input
+        placeholder="*************"
+        variant="filled"
+        mb={6}
+        type="password"
+      ></Input>
+      <Textarea mb={6} resize="none" placeholder="Describe your artwork request." />
+      <Flex direction={"column"}>
+        <Button mb={6} colorScheme={"teal"}>
+          Submit
+        </Button>
+      </Flex>
+      </Flex>
       </Flex>
     </Stack>
     </Box>
