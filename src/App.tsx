@@ -9,30 +9,59 @@ import {
   useBreakpointValue,
   Textarea,
   Input,
-  useColorModeValue
+  useColorModeValue, 
+  IconProps, 
+  Icon
 } from '@chakra-ui/react';
+import { Request } from './components/RequestForm';
+
 
 export const App = () => {
-  const formBackground = useColorModeValue("gray.100", "gray.700");
   return (
-  <Box bgGradient="radial(brand.800, brand.700)">
+  <Box bgGradient='linear(to-br, #000000,#020024, #090979, #00d4ff)'>
+    <Flex
+      as="nav"
+      justify="space-between"
+      wrap="wrap"
+      padding={5}
+      color="white"
+    >
+      <Flex mr={5}>
+        <Heading as="h1" size="lg" letterSpacing={"tighter"}>
+          Provenance
+        </Heading>
+      </Flex>
+      <Stack direction='row' spacing={20} align='center'>
+      <Text fontSize={'xl'}>About</Text>
+      <Text fontSize={'xl'}>How To</Text>
+      <Text fontSize={'xl'}>Community</Text>
+      <Text fontSize={'xl'}>FAQs</Text>
+      <Button
+              rounded={'md'}
+              bg={'blue.400'}
+              color={'white'}
+              _hover={{
+                bg: 'blue.500',
+              }}>
+              Launch App
+            </Button>
+      </Stack>
+      
+    </Flex>
+    
     <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
-      <Flex p={8} flex={1} align={'center'} justify={'center'}>
+      <Flex flex={.9} align={'center'} justify={'center'}>
         <Stack spacing={6} w={'full'} maxW={'lg'}>
           <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
-            <Text
-              as={'span'}
-              position={'relative'}>
-              Freelance
-            </Text>
-            <br />{' '}
-            <Text color={'white'} as={'span'}>
-              NFT Artwork
+            <Text bgGradient='linear(to-l, #B3E5FC,#03A9F4)'
+  bgClip='text'
+  fontSize='6xl'
+  fontWeight='extrabold'>
+              Freelance Digital Assets
             </Text>{' '}
           </Heading>
-          <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
-            The project board is an exclusive resource for contract work. It's
-            perfect for freelancers, agencies, and moonlighters.
+          <Text fontSize={'xl'} color={'gray.100'}>
+            A virtual marketplace for the development of NFTs, in game assets, and the Metaverse
           </Text>
           <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
             <Button
@@ -42,42 +71,27 @@ export const App = () => {
               _hover={{
                 bg: 'blue.500',
               }}>
-              Create Project
+              Launch App
             </Button>
-            <Button rounded={'full'}>How It Works</Button>
+            <Button color={'#020024'}  bg={'white'} rounded={'full'}>How It Works</Button>
           </Stack>
+          
         </Stack>
       </Flex>
+      
       <Flex height="100vh" alignItems="center" justifyContent="center" pr={10}>
         <Flex
           direction={"column"}
-          background={formBackground}
+          bg="#263238"
           p={12}
           rounded={20}
     
         >
-      <Heading mb={6}>Request</Heading>
-      <Input
-        placeholder="ed.marcavage@gmail.com"
-        variant="filled"
-        mb={3}
-        type="email"
-      ></Input>
-      <Input
-        placeholder="*************"
-        variant="filled"
-        mb={6}
-        type="password"
-      ></Input>
-      <Textarea mb={6} resize="none" placeholder="Describe your artwork request." />
-      <Flex direction={"column"}>
-        <Button mb={6} colorScheme={"teal"}>
-          Submit
-        </Button>
-      </Flex>
+     <Request/>
       </Flex>
       </Flex>
     </Stack>
+    
     </Box>
   )
 }
