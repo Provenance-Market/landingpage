@@ -23,12 +23,13 @@ export const Request = () => {
         <FormControl isRequired>
           <FormLabel>Title</FormLabel>
             <Input 
+            _placeholder={{ color: 'white' }}
               mb={3} 
               placeholder='Give your future masterpiece a title.' 
             />
         </FormControl>
         <FormLabel>Description</FormLabel>
-          <Textarea mb={6} resize="none" placeholder="Describe your artwork request." /> 
+          <Textarea _placeholder={{ color: 'white' }} mb={6} resize="none" placeholder="Describe your artwork request." /> 
       <Flex direction={"column"}>
         <Button textColor={'#263238'} mb={6} bg={"#00d4ff"}>
           Submit

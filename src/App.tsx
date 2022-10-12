@@ -18,7 +18,7 @@ import { Request } from './components/RequestForm';
 
 export const App = () => {
   return (
-  <Box bgGradient='linear(to-br, #000000,#020024, #090979, #00d4ff)'>
+  <Box bgGradient='linear(to-br, #000000,#020024, #090979,#00d4ff, #00d4ff,#00d4ff)'>
     <Flex
       as="nav"
       justify="space-between"
@@ -82,7 +82,7 @@ export const App = () => {
       <Flex height="100vh" alignItems="center" justifyContent="center" pr={10}>
         <Flex
           direction={"column"}
-          bg="#263238"
+          bg="#020024"
           p={12}
           rounded={20}
     
